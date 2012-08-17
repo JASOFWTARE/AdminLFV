@@ -1,4 +1,0 @@
-Agregar las Siguientes Librerias
-- Hibernate
-- MySQL JDBC Driver
-- EclipseLink(JPA 2.0)
