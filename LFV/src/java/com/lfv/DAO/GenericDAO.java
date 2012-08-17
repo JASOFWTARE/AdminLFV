@@ -1,5 +1,5 @@
 
-package com.flv.DAO;
+package com.lfv.DAO;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

@@ -5,6 +5,8 @@
 <struts>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
-        
+       <action name="Index" class="com.lfv.controller.Index">
+           <result>index.jsp</result>
+       </action> 
     </package>
 </struts>
