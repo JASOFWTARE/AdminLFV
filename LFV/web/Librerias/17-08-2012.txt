@@ -1,0 +1,4 @@
+Agregar las Siguientes Librerias:
+- Hibernate
+- PostgreSQL JDBC Driver 
+- EclipseLink(JPA 2.0)
