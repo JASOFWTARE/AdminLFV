@@ -2,3 +2,4 @@ Agregar las Siguientes Librerias:
 - Hibernate
 - PostgreSQL JDBC Driver 
 - EclipseLink(JPA 2.0)
+- Struts 2.2.3 Core Libraries
