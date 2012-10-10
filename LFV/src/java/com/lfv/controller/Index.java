@@ -4,13 +4,14 @@
  */
 package com.lfv.controller;
 
+import com.lfv.util.ManagedUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  *
  * @author iventiva12
  */
-public class Index extends ActionSupport{
+public class Index extends ManagedUtil{
     private String message;
     
     @Override

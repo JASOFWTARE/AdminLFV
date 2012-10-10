@@ -6,7 +6,19 @@
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
        <action name="Index" class="com.lfv.controller.Index">
-           <result>index.jsp</result>
-       </action> 
+          <result>index.jsp</result>
+       </action>
+       
+       <action name="CrearActualizarEquipo" class="com.lfv.controller.EquipoAction">
+           <result name="success">equipo/formEquipo.jsp</result>
+       </action>
+       
+       <action name="ActualizarEquipo" class="com.lfv.controller.EquipoAction" method="actualizarGuardarEquipo">
+           <result name="success">ListaEquipo</result>
+       </action>
+       
+       <action name="ListaEquipo" class="com.lfv.controller.EquipoAction" method="listarEquipos">
+           <result name="success">equipo/listaEquipos.jsp</result>
+       </action>  
     </package>
 </struts>
