@@ -11,8 +11,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 
-public class CategoriaDAO {
-    public static List<Categoria> getAllCategoryList(EntityManagerFactory  emf){
+public class CategoriaDAO extends GenericDAO<Categoria> {
+    
+    public CategoriaDAO(){
+        super(Categoria.class);
+    }
+    public List<Categoria> getAllCategoryList(EntityManagerFactory emf){
         List<Categoria> categoriaList = new ArrayList<Categoria>();
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -22,7 +26,28 @@ public class CategoriaDAO {
             categoriaList = query.getResultList();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally{
+            em.flush();
+            em.close();
         }
         return categoriaList;
+    }
+    
+    public Categoria getCategoriaByID(int idCategoria, EntityManagerFactory emf) {
+        Categoria categoria = null;
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        try {
+            String jpql = "SELECT c FROM Categoria c where c.idCategoria = :idCategoria";
+            Query query = em.createQuery(jpql);
+            query.setParameter("idCategoria", idCategoria);
+            categoria = (Categoria) query.getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally{
+            em.flush();
+            em.close();
+        }
+        return categoria;
     }
 }

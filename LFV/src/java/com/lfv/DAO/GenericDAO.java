@@ -26,7 +26,6 @@ public class GenericDAO<E> {
             e.printStackTrace();
             response = false;
         } finally {
-            em.flush();
             em.close();
         }
         return response;
@@ -37,14 +36,13 @@ public class GenericDAO<E> {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         try {
-            em.persist(entity);
+            em.merge(entity);
             em.getTransaction().commit();
         } catch (Exception e) {
             em.getTransaction().rollback();
             e.printStackTrace();
             response = false;
         } finally {
-            em.flush();
             em.close();
         }
         return response;
@@ -62,13 +60,12 @@ public class GenericDAO<E> {
             e.printStackTrace();
             response = false;
         } finally {
-            em.flush();
             em.close();
         }
         return response;
     }
     
-    public Object getEntityById(EntityManagerFactory  emf, int id) {
+    public Object getEntityById(EntityManagerFactory  emf, Long id) {
         Object entity = null;
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();

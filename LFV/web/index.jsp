@@ -15,7 +15,7 @@
                             <div class="regis-t-c"></div>
                             <div id="regis_body" class="regis-body">
                                 <h1>Menu Principal</h1>
-                                <a href="CrearActualizarEquipo">Crear Actualizar Equipo</a>
+                                <a href="ListaEquipo">Crear Actualizar Equipo</a>
                             </div>    
                         </div>
                         <div class="regis-b-c"/>

@@ -14,7 +14,7 @@
        </action>
        
        <action name="ActualizarEquipo" class="com.lfv.controller.EquipoAction" method="actualizarGuardarEquipo">
-           <result name="success">ListaEquipo</result>
+           <result name="success" type="chain">ListaEquipo</result>
        </action>
        
        <action name="ListaEquipo" class="com.lfv.controller.EquipoAction" method="listarEquipos">

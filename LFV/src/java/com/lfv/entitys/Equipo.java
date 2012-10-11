@@ -46,7 +46,7 @@ public class Equipo implements Serializable {
     @Basic(optional = false)
     @Column(name = "id_equipo")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "seq_equipo")
-    @SequenceGenerator(name="seq_equipo", sequenceName = "seq_equipo")
+    @SequenceGenerator(name="seq_equipo", sequenceName = "seq_equipo", allocationSize=1)
     private Long idEquipo;
     @Column(name = "nombre_equipo")
     private String nombreEquipo;

@@ -17,18 +17,20 @@
         <div id="regis_body" class="regis-body">
         <h1>Equipo</h1>
         <s:form id="equipoForm" action="ActualizarEquipo">
+            <input type="hidden" name="accion" value="<s:property value="accion"/>"/>
+            <input type="hidden" name="idEquipo" value="<s:property value="idEquipo"/>"/>
             <div class="form-row">
-                <label>Nombre Equipo <b>*</b></label>
+                <label>Nombre Equipo: <b>*</b></label>
                 <input type="text" name="equipo.nombreEquipo" value="<s:property value="equipo.nombreEquipo"/>" class="input1"/>
             </div>
             
             <div class="form-row">
-                <label>Presidente del Equipo <b>*</b></label>
+                <label>Presidente del Equipo: <b>*</b></label>
                 <input type="text" name="equipo.presidenteEquipo" value="<s:property value="equipo.presidenteEquipo"/>" class="input1"/>
             </div>
             
             <div class="form-row">
-                <label>Categoria <b>*</b></label>
+                <label>Categoria: <b>*</b></label>
                 <select name="idCategoria">
                     <s:iterator value="categoriaList">
                         <option value="<s:property value="idCategoria"/>"><s:property value="nombreCategoria"/></option>
@@ -36,7 +38,16 @@
                 </select>
                 
             </div>
-            <input type="submit" value="Guardar"/>
+            
+            <div class="form-row">
+                <label>Fecha Fundacion: <b>*</b></label>
+                <input type="text" onkeypress="return false;" id="fecha" name="date" class="input1" value="<s:property value="equipo.fundacionEquipo"/>"/>
+            </div>
+            
+            <div class="form-row">
+                <label></label>
+                <input type="submit" class="button save" value="<s:property value="accion"/>"/>
+            </div>
         </s:form>
         </div>    
         </div>
@@ -45,6 +56,11 @@
         </div>
         </div>
         </div>    
+        <script type="text/javascript">
+            jQuery(document).ready(function(){
+                jQuery("#fecha").datepicker();
+            });
+        </script>
         <jsp:include page="/resources/template/footer.jsp"/>
     </body>
 </html>
