@@ -12,29 +12,29 @@ import com.lfv.entitys.Equipo;
 import java.util.List;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+public class CategoriaBL implements CategoriaManager{
 
-public class EquipoBL implements EquipoManager{
-    @Inject
-    private EquipoDAO equipoDAO;
     @Inject
     private CategoriaDAO categoriaDAO;
     EntityManagerFactory em = Persistence.createEntityManagerFactory("LFVPU");
-    
-
-    public Equipo getEquipoById(int idEquipo) {
-        return equipoDAO.getEquipoByID(idEquipo, em);
+    @Override
+    public List<Categoria> getAllCategoryList() {
+        return categoriaDAO.getAllCategoryList(em);
     }
 
-    public void guardarEquipo(Equipo equipo) {
-        equipoDAO.create(equipo, em);
-    }
-    
-    public void actualizarEquipo(Equipo equipo) {
-        equipoDAO.update(equipo, em);
+    @Override
+    public Categoria getCategoriaById(int idCategoria) {
+        return categoriaDAO.getCategoriaByID(idCategoria, em);
     }
 
-    public List<Equipo> getEquipoList(int idCategoria) {
-        return equipoDAO.getEquipoList(idCategoria, em);
+    @Override
+    public void guardarCategoria(Categoria categoria) {
+        categoriaDAO.create(categoria, em);
     }
-    
+
+    @Override
+    public void actualizarCategor(Categoria categoria) {
+        categoriaDAO.update(categoria, em);
+    }
+
 }

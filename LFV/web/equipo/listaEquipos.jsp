@@ -15,15 +15,20 @@
         <div id="registrationContent">
         <div class="regis-t-c"></div>
         <div id="regis_body" class="regis-body">
-        <h1>Lista de Equipos</h1>
-        <s:property value="equipoList.size()"/>
-        <s:if test="equipoList.size() != 8">
-            hola mundo
-        </s:if>
-        <s:else>
-            testeo
-        </s:else>
-        <a href="CrearActualizarEquipo">Equipo Form</a>
+            <h1>Lista de Equipos</h1>
+            <a href="CrearActualizarEquipo">Nuevo Equipo</a><br>
+            <div class="form-row">
+                <label>Filtro: </label>
+                <select id="idCategoria">
+                    <option value="-1">Todos</option>
+                <s:iterator value="categoriaList">
+                    <option value="<s:property value="idCategoria"/>"><s:property value="nombreCategoria"/></option>
+                </s:iterator>
+            </select>
+            </div>
+            <div id="tabla" class="tabla">
+                <jsp:include page="tablaEquipo.jsp"/>
+            </div>
         </div>    
         </div>
         <div class="regis-b-c"/>

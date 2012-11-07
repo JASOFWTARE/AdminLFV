@@ -9,8 +9,6 @@ import com.lfv.entitys.Equipo;
 import java.util.List;
 
 public interface EquipoManager {
-    public List<Categoria> getAllCategoryList();
-    public Categoria getCategoriaById(int idCategoria);
     public Equipo getEquipoById(int idEquipo);
     public void guardarEquipo(Equipo equipo);
     public void actualizarEquipo(Equipo equipo);

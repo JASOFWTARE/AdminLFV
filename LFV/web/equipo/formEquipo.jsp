@@ -15,6 +15,7 @@
         <div id="registrationContent">
         <div class="regis-t-c"></div>
         <div id="regis_body" class="regis-body">
+        <a href="ListaEquipo">Lista de Equipos</a><br>
         <h1>Equipo</h1>
         <s:form id="equipoForm" action="ActualizarEquipo">
             <input type="hidden" name="accion" value="<s:property value="accion"/>"/>

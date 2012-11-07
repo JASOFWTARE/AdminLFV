@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+public class EquipoAction extends ManagedUtil {
 
-public class EquipoAction extends ManagedUtil{
     private int idEquipo;
     private Equipo equipo;
     private List<Categoria> categoriaList = new ArrayList<Categoria>();
@@ -21,39 +21,44 @@ public class EquipoAction extends ManagedUtil{
     private int idCategoria;
     private String accion;
     private String date;
-    
-    public String execute(){
+
+    public String execute() {
         accion = Constantes.GUARDAR_EQUIPO;
-        if(idEquipo > 0){
+        if (idEquipo > 0) {
             accion = Constantes.ACTUALIZAR_EQUIPO;
             equipo = equipoManager.getEquipoById(idEquipo);
             idCategoria = Integer.parseInt(equipo.getIdCategoria().getIdCategoria().toString());
         }
-        categoriaList = equipoManager.getAllCategoryList();
+        categoriaList = categoriaManager.getAllCategoryList();
         return SUCCESS;
     }
-    
-    public String actualizarGuardarEquipo(){
+
+    public String actualizarGuardarEquipo() {
         equipo.setFundacionEquipo(new Date(date));
-        Categoria categoria = equipoManager.getCategoriaById(idCategoria);
+        Categoria categoria = categoriaManager.getCategoriaById(idCategoria);
         equipo.setIdCategoria(categoria);
-        if(accion.equals(Constantes.ACTUALIZAR_EQUIPO)){
+        if (accion.equals(Constantes.ACTUALIZAR_EQUIPO)) {
             Equipo equipoAnt = equipoManager.getEquipoById(idEquipo);
             equipoAnt.setNombreEquipo(equipo.getNombreEquipo());
             equipoAnt.setFundacionEquipo(new Date(date));
             equipoAnt.setIdCategoria(equipo.getIdCategoria());
             equipoAnt.setPresidenteEquipo(equipo.getPresidenteEquipo());
             equipoManager.actualizarEquipo(equipoAnt);
-        }
-        else
+        } else {
             equipoManager.guardarEquipo(equipo);
+        }
+        return SUCCESS;
+    }
+
+    public String listarEquipos() {
+        equipoList = equipoManager.getEquipoList(0);
+        categoriaList = categoriaManager.getAllCategoryList();
         return SUCCESS;
     }
     
-    public String listarEquipos(){
-        idCategoria = 0;
+    public String refreshEquipos(){
         equipoList = equipoManager.getEquipoList(idCategoria);
-        return SUCCESS;
+        return "categorias";
     }
 
     /**
