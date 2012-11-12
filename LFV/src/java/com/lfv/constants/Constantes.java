@@ -7,4 +7,5 @@ package com.lfv.constants;
 public interface Constantes {
     public static final String ACTUALIZAR = "Actualizar";
     public static final String GUARDAR = "Guardar";
+    public static final String LIKE = "%";
 }

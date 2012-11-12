@@ -26,5 +26,10 @@ public class JugadorBL implements JugadorManager{
     public void actualizarJugador(Jugador jugador) {
         jugadorDAO.update(jugador, em);
     }
+
+    public List<Jugador> getJugadorListByFilter(String filter) {
+        return jugadorDAO.getJugadorByFilter(filter, em);
+    }
+
     
 }

@@ -11,4 +11,5 @@ public interface JugadorManager {
     public Jugador getJugadorById(int idjugador);
     public void guardarJugador(Jugador jugador);
     public void actualizarJugador(Jugador jugador);
+    public List<Jugador>  getJugadorListByFilter(String filter);
 }
