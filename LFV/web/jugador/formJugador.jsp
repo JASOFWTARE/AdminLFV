@@ -22,27 +22,27 @@
             <input type="hidden" name="idJugador" value="<s:property value="idJugador"/>"/>
             <div class="form-row">
                 <label>Nombre : <b>*</b></label>
-                <input type="text" name="jugador.nombreJugador" value="<s:property value="equipo.nombreEquipo"/>" class="input1"/>
+                <input type="text" name="jugador.nombreJugador" value="<s:property value="jugador.nombreJugador"/>" class="input1"/>
             </div>
             
             <div class="form-row">
                 <label>Apellido Paterno : <b>*</b></label>
-                <input type="text" name="jugador.aPaternoJugador" value="<s:property value="equipo.nombreEquipo"/>" class="input1"/>
+                <input type="text" name="jugador.aPaternoJugador" value="<s:property value="jugador.aPaternoJugador"/>" class="input1"/>
             </div>
             
             <div class="form-row">
                 <label>Apellido Materno : <b>*</b></label>
-                <input type="text" name="jugador.aMaternoJugador" value="<s:property value="equipo.nombreEquipo"/>" class="input1"/>
+                <input type="text" name="jugador.aMaternoJugador" value="<s:property value="jugador.aMaternoJugador"/>" class="input1"/>
             </div>
             
             <div class="form-row">
                 <label>C.I. : <b>*</b></label>
-                <input type="text" name="jugador.ciJugador" value="<s:property value="equipo.nombreEquipo"/>" class="input1"/>
+                <input type="text" name="jugador.ciJugador" value="<s:property value="jugador.ciJugador"/>" class="input1"/>
             </div>
             
             <div class="form-row">
                 <label>Matricula: <b>*</b></label>
-                <input type="text" name="jugador.matriculaJugador" value="<s:property value="equipo.presidenteEquipo"/>" class="input1"/>
+                <input type="text" name="jugador.matriculaJugador" value="<s:property value="jugador.matriculaJugador"/>" class="input1"/>
             </div>
             
             <div class="form-row">
