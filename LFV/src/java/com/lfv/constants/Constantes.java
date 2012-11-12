@@ -5,6 +5,6 @@
 package com.lfv.constants;
 
 public interface Constantes {
-    public static final String ACTUALIZAR_EQUIPO = "Actualizar";
-    public static final String GUARDAR_EQUIPO = "Guardar";
+    public static final String ACTUALIZAR = "Actualizar";
+    public static final String GUARDAR = "Guardar";
 }

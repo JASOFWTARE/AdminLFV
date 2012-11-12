@@ -21,5 +21,15 @@
        <action name="RecargarListEquipo" class="com.lfv.controller.EquipoAction">
            <result name="categorias">equipo/tablaEquipo.jsp</result>
        </action>
+       
+       <!--Action Jugador-->
+       <action name="JugadorAction" class="com.lfv.controller.JugadorAction">
+           <result name="success">jugador/formJugador.jsp</result>
+           <result name="actualizado" type="redirect">JugadorAction!listaJugadores</result>
+           <result name="lista">jugador/listaJugador.jsp</result>
+           <result name="eliminado" type="redirect">JugadorAction!listaJugadores</result>
+           <result name="refresh">jugador/tablaJugador.jsp</result>
+       </action>
+       
     </package>
 </struts>

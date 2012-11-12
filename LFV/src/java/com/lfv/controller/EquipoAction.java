@@ -23,9 +23,9 @@ public class EquipoAction extends ManagedUtil {
     private String date;
 
     public String execute() {
-        accion = Constantes.GUARDAR_EQUIPO;
+        accion = Constantes.GUARDAR;
         if (idEquipo > 0) {
-            accion = Constantes.ACTUALIZAR_EQUIPO;
+            accion = Constantes.ACTUALIZAR;
             equipo = equipoManager.getEquipoById(idEquipo);
             idCategoria = Integer.parseInt(equipo.getIdCategoria().getIdCategoria().toString());
         }
@@ -37,7 +37,7 @@ public class EquipoAction extends ManagedUtil {
         equipo.setFundacionEquipo(new Date(date));
         Categoria categoria = categoriaManager.getCategoriaById(idCategoria);
         equipo.setIdCategoria(categoria);
-        if (accion.equals(Constantes.ACTUALIZAR_EQUIPO)) {
+        if (accion.equals(Constantes.ACTUALIZAR)) {
             Equipo equipoAnt = equipoManager.getEquipoById(idEquipo);
             equipoAnt.setNombreEquipo(equipo.getNombreEquipo());
             equipoAnt.setFundacionEquipo(new Date(date));

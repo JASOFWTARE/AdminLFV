@@ -48,7 +48,7 @@ public class Jugador implements Serializable {
     @Basic(optional = false)
     @Column(name = "id_jugador")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "seq_jugador")
-    @SequenceGenerator(name="seq_jugador", sequenceName = "seq_jugador")
+    @SequenceGenerator(name="seq_jugador", sequenceName = "seq_jugador", allocationSize=1)
     private Long idJugador;
     @Column(name = "nombre_jugador")
     private String nombreJugador;
