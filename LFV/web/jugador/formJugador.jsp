@@ -15,8 +15,10 @@
         <div id="registrationContent">
         <div class="regis-t-c"></div>
         <div id="regis_body" class="regis-body">
-        <a href="JugadorAction!listaJugadores">Lista de Jugadores</a><br>
         <h1>Jugador</h1>
+        <div class="links">
+            <a href="JugadorAction!listaJugadores"><<  Lista de Jugadores</a>
+        </div>
         <s:form id="jugadorForm" action="JugadorAction!actualizarJugador">
             <input type="hidden" name="accion" value="<s:property value="accion"/>"/>
             <input type="hidden" name="idJugador" value="<s:property value="idJugador"/>"/>
@@ -52,7 +54,7 @@
             
             <div class="form-row">
                 <label></label>
-                <input type="submit" class="button save" value="<s:property value="accion"/>"/>
+                <input type="submit" class="button save margin" value="<s:property value="accion"/>"/>
             </div>
         </s:form>
         </div>    

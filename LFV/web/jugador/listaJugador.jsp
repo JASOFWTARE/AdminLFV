@@ -16,7 +16,9 @@
         <div class="regis-t-c"></div>
         <div id="regis_body" class="regis-body">
             <h1>Lista de Jugadores</h1>
-            <a href="JugadorAction">Nuevo Jugador</a><br>
+            <div class="links">
+                <a href="JugadorAction">Nuevo Jugador</a>
+            </div>
             <div class="form-row">
                 <label>Filtro: </label>
                 <input type="text" id="filtro" class="input1"/>

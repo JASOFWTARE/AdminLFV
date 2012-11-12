@@ -15,8 +15,10 @@
         <div id="registrationContent">
         <div class="regis-t-c"></div>
         <div id="regis_body" class="regis-body">
-        <a href="ListaEquipo">Lista de Equipos</a><br>
         <h1>Equipo</h1>
+        <div class="links">
+            <a href="ListaEquipo"><<  Lista de Equipos</a>
+        </div>
         <s:form id="equipoForm" action="ActualizarEquipo">
             <input type="hidden" name="accion" value="<s:property value="accion"/>"/>
             <input type="hidden" name="idEquipo" value="<s:property value="idEquipo"/>"/>
@@ -47,7 +49,7 @@
             
             <div class="form-row">
                 <label></label>
-                <input type="submit" class="button save" value="<s:property value="accion"/>"/>
+                <input type="submit" class="button save margin" value="<s:property value="accion"/>"/>
             </div>
         </s:form>
         </div>    

@@ -17,13 +17,8 @@ input.input1 {font-family:Arial, Helvetica, sans-serif; width:260px; border:1px 
 
 .save {
     background: url(../images/sprite.png) 10px 7px no-repeat #f3f3f3;
-    padding-left: 30px;
 }
 
-.delete {
-    background: url(../images/sprite.png)  10px -61px no-repeat #f3f3f3;
-    padding-left: 30px;
-}
 
 body {
     margin: 0;
@@ -198,13 +193,24 @@ div{
 
 .fila{
     display: inline-block;
-    border-bottom-style: dashed;
     margin-bottom: 5px;
     padding-bottom: 5px;
     color: black;
+    border-bottom: 1px dashed black;
 }
 
 .filaCabezera{
     display: inline-block;
     color: #1582AB;
+    background: #ECECEC;
+    padding-bottom: 5px;
+}
+
+.links{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.margin{
+    padding-left: 30px;
 }

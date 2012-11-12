@@ -16,7 +16,9 @@
         <div class="regis-t-c"></div>
         <div id="regis_body" class="regis-body">
             <h1>Lista de Equipos</h1>
-            <a href="CrearActualizarEquipo">Nuevo Equipo</a><br>
+            <div class="links">
+                <a href="CrearActualizarEquipo">Nuevo Equipo</a><br>
+            </div>
             <div class="form-row">
                 <label>Filtro: </label>
                 <select id="idCategoria">
