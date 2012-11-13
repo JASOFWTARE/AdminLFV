@@ -173,4 +173,8 @@ public class Jugador implements Serializable {
         return "com.lfv.entitys.Jugador[ idJugador=" + idJugador + " ]";
     }
     
+    public String getApellidos(){
+        return this.aPaternoJugador + " " + this.aMaternoJugador;
+    }
+    
 }

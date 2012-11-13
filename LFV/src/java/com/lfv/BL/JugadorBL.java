@@ -32,4 +32,9 @@ public class JugadorBL implements JugadorManager{
     }
 
     
+    public List<Jugador> getJugadorList() {
+        return jugadorDAO.getJugadorByFilter("", em);
+    }
+
+    
 }

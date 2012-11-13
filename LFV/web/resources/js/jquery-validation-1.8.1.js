@@ -261,22 +261,22 @@ $.extend($.validator, {
 
 	messages: {
 		required: '<span class="errorMessage">El Campo es requerido !!</span>',
-		remote: "Please fix this field.",
-		email: '<span class="errorMessage">Enter a valid email address !!</span>',
-		url: '<span class="errorMessage">Enter a valid URL !!</span>',
-		date:'<span class="errorMessage">Enter a valid date !!</span>',
+		remote: "Por Favor Corrija este Campo.",
+		email: '<span class="errorMessage">Ingrese Direccion de Mail Valida !!</span>',
+		url: '<span class="errorMessage">Ingrese un URL valido !!</span>',
+		date:'<span class="errorMessage">Ingrese una fecha valida !!</span>',
 		dateISO: "Please enter a valid date (ISO).",
-		number: '<span class="errorMessage">Enter a valid number !!</span>',
-		digits: '<span class="errorMessage">Enter only digits !!</span>',
+		number: '<span class="errorMessage">Ingrese un Numero valido !!</span>',
+		digits: '<span class="errorMessage">Ingrese solo digitos !!</span>',
 		creditcard: "Please enter a valid credit card number.",
 		equalTo: "Please enter the same value again.",
 //		accept: "Please enter a value with a valid extension.",
 		maxlength: $.validator.format('<span class="errorMessage">Ingrese no mas de {0} caracteres !!</span>'),
-		minlength: $.validator.format('<span class="errorMessage">Enter at least {0} characters !!</span>'),
+		minlength: $.validator.format('<span class="errorMessage">Ingrese no menos de {0} caracteres !!</span>'),
 		rangelength: $.validator.format('<span class="errorMessage">Enter a value between {0} and {1} characters long !!</span>'),
 		range: $.validator.format('<span class="errorMessage">Enter a value between {0} and {1} !!</span>'),
-		max: $.validator.format('<span class="errorMessage">Enter a value less than or equal to {0} !!</span>'),
-		min: $.validator.format('<span class="errorMessage">Enter a value greater than or equal to {0} !!</span>')
+		max: $.validator.format('<span class="errorMessage">Introduzca un valor menor o igual a {0} !!</span>'),
+		min: $.validator.format('<span class="errorMessage">Introduzca un valor mayor o igual {0} !!</span>')
 	},
 
 	autoCreateRanges: false,

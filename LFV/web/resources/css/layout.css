@@ -214,3 +214,19 @@ div{
 .margin{
     padding-left: 30px;
 }
+
+.errorMessage{
+    color: red;
+    font-weight: bold;
+}
+
+
+input.error{
+    border: 1px solid red !important;
+}
+
+label.error{
+    width: auto;
+    margin-left: 7px;
+    float: none;
+}

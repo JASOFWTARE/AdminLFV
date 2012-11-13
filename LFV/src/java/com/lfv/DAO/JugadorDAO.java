@@ -1,4 +1,3 @@
-
 package com.lfv.DAO;
 
 import com.lfv.constants.Constantes;
@@ -10,12 +9,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 
 public class JugadorDAO extends GenericDAO<Jugador> {
-    
-    public JugadorDAO()
-    {
+
+    public JugadorDAO() {
         super(Jugador.class);
     }
-    
+
     public Jugador getJugadorByID(int idJugador, EntityManagerFactory emf) {
         Jugador jugador = null;
         EntityManager em = emf.createEntityManager();
@@ -33,16 +31,15 @@ public class JugadorDAO extends GenericDAO<Jugador> {
         }
         return jugador;
     }
-    
-    public List<Jugador> getJugadorByFilter(String filter , EntityManagerFactory emf )
-    {
+
+    public List<Jugador> getJugadorByFilter(String filter, EntityManagerFactory emf) {
         List<Jugador> jugadorList = null;
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-           try {
+        try {
             String jpql = "SELECT j FROM Jugador j where (j.nombreJugador like :filter or j.aPaternoJugador like :filter)";
             Query query = em.createQuery(jpql);
-            query.setParameter("filter", filter+ Constantes.LIKE);
+            query.setParameter("filter", filter + Constantes.LIKE);
             jugadorList = (List<Jugador>) query.getResultList();
         } catch (Exception e) {
             e.printStackTrace();
@@ -52,5 +49,4 @@ public class JugadorDAO extends GenericDAO<Jugador> {
         }
         return jugadorList;
     }
-
 }

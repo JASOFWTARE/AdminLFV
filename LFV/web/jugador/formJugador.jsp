@@ -33,7 +33,7 @@
             </div>
             
             <div class="form-row">
-                <label>Apellido Materno : <b>*</b></label>
+                <label>Apellido Materno : </label>
                 <input type="text" name="jugador.aMaternoJugador" value="<s:property value="jugador.aMaternoJugador"/>" class="input1"/>
             </div>
             
@@ -67,6 +67,23 @@
         <script type="text/javascript">
             jQuery(document).ready(function(){
                 jQuery("#fecha").datepicker();
+                jQuery("#jugadorForm").validate({
+                    rules : {
+                        'jugador.nombreJugador' : "required",
+                        'jugador.aPaternoJugador' : "required",
+                        'jugador.ciJugador' : {
+                            required : true,
+                            number: true,
+                            min: 1
+                        },
+                        'jugador.matriculaJugador' : {
+                            required : true,
+                            number: true,
+                            min: 1
+                        },
+                        'date' : 'required' 
+                    }
+                });
             });
         </script>
         <jsp:include page="/resources/template/footer.jsp"/>

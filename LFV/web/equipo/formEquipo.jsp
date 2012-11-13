@@ -62,6 +62,13 @@
         <script type="text/javascript">
             jQuery(document).ready(function(){
                 jQuery("#fecha").datepicker();
+                jQuery("#equipoForm").validate({
+                    rules : {
+                        'equipo.nombreEquipo' : "required",
+                        'equipo.presidenteEquipo' : "required",
+                        'date' : "required"
+                    }
+                });
             });
         </script>
         <jsp:include page="/resources/template/footer.jsp"/>

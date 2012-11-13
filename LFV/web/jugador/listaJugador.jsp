@@ -34,5 +34,14 @@
         </div>
         </div>    
         <jsp:include page="/resources/template/footer.jsp"/>
+        <script type="text/javascript">
+            jQuery(document).ready(function(){
+                jQuery("#filtro").keyup(function(){
+                    var data = "filter="+jQuery(this).val() + (data != null ? data : '');
+                    var action = "JugadorAction!refreshJugador";
+                    consultaAjax(data, action, "#tabla")
+                });
+            });
+        </script>
     </body>
 </html>

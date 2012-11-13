@@ -22,12 +22,3 @@
     </div>
     </div>
 </s:iterator>
-<script type="text/javascript">
-    jQuery(document).ready(function(){
-        jQuery("#idCategoria").change(function(){
-            var data = "idCategoria=" + jQuery(this).val();
-            var action = "RecargarListEquipo!refreshEquipos";
-            consultaAjax(data, action, "#tabla")
-        });
-    });
-</script>

@@ -39,5 +39,14 @@
         </div>
         </div>    
         <jsp:include page="/resources/template/footer.jsp"/>
+        <script type="text/javascript">
+            jQuery(document).ready(function(){
+                jQuery("#idCategoria").change(function(){
+                    var data = "idCategoria=" + jQuery(this).val();
+                    var action = "RecargarListEquipo!refreshEquipos";
+                    consultaAjax(data, action, "#tabla")
+                });
+            });
+        </script>
     </body>
 </html>
