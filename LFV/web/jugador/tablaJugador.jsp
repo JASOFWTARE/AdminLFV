@@ -22,7 +22,7 @@
             <a href='JugadorAction!eliminarJugador?idJugador=<s:property value="idJugador"/>'><img src="resources/images/delete.png"></a>
         </s:if>
         <s:else>
-        <a href='JugadorAction!eliminarJugador?idJugador=<s:property value="idJugador"/>'><img src="resources/images/add.png"></a>
+            <a href='JugadorAction!eliminarJugador?idJugador=<s:property value="idJugador"/>'><img src="resources/images/add.png"></a>
         </s:else>
         
     </div>

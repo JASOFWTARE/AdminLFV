@@ -31,5 +31,13 @@
            <result name="refresh">jugador/tablaJugador.jsp</result>
        </action>
        
+       <!-- Action Campeonato-->
+       <action name="CampeonatoAction" class="com.lfv.controller.CampeonatoAction">
+           <result name="success">campeonato/formCampeonato.jsp</result>
+           <result name="actualizado" type="redirect">CampeonatoAction!listaCampeonatos</result>
+           <result name="lista">camponato/listaCampeonatos.jsp</result>
+           <result name="cerrado" type="redirect">CampeonatoAction!listaCampeonatos</result>
+       </action>
+       
     </package>
 </struts>
