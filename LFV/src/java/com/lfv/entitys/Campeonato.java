@@ -47,7 +47,7 @@ public class Campeonato implements Serializable {
     @Basic(optional = false)
     @Column(name = "id_campeonato")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "seq_campeonato")
-    @SequenceGenerator(name="seq_campeonato", sequenceName = "seq_campeonato")
+    @SequenceGenerator(name="seq_campeonato", sequenceName = "seq_campeonato", allocationSize=1)
     private Long idCampeonato;
     @Column(name = "nombre_campeonato")
     private String nombreCampeonato;

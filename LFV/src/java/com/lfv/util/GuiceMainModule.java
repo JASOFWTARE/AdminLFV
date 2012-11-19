@@ -5,6 +5,8 @@
 package com.lfv.util;
 
 import com.google.inject.AbstractModule;
+import com.lfv.BL.CampeonatoBL;
+import com.lfv.BL.CampeonatoManager;
 import com.lfv.BL.EquipoBL;
 import com.lfv.BL.CategoriaBL;
 import com.lfv.BL.CategoriaManager;
@@ -18,5 +20,6 @@ public class GuiceMainModule extends AbstractModule {
         bind(EquipoManager.class).to(EquipoBL.class);
         bind(CategoriaManager.class).to(CategoriaBL.class);
         bind(JugadorManager.class).to(JugadorBL.class);
+        bind(CampeonatoManager.class).to(CampeonatoBL.class);
     }
 }
