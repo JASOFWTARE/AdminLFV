@@ -33,6 +33,7 @@ public class JugadorDAO extends GenericDAO<Jugador> {
     }
 
     public List<Jugador> getJugadorByFilter(String filter, EntityManagerFactory emf) {
+        //Busqueda mayuculas minusculas Fixeado 
         List<Jugador> jugadorList = null;
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
