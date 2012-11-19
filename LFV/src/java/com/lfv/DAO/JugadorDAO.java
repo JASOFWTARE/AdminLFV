@@ -37,9 +37,9 @@ public class JugadorDAO extends GenericDAO<Jugador> {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         try {
-            String jpql = "SELECT j FROM Jugador j where (j.nombreJugador like :filter or j.aPaternoJugador like :filter)";
+            String jpql = "SELECT j FROM Jugador j where (upper(j.nombreJugador) like :filter or upper(j.aPaternoJugador) like :filter)";
             Query query = em.createQuery(jpql);
-            query.setParameter("filter", filter + Constantes.LIKE);
+            query.setParameter("filter", filter.toUpperCase() + Constantes.LIKE);
             jugadorList = (List<Jugador>) query.getResultList();
         } catch (Exception e) {
             e.printStackTrace();
