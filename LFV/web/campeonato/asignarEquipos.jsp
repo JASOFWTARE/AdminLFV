@@ -32,6 +32,7 @@
         </div>    
         <script type="text/javascript">
             jQuery(document).ready(function(){
+                var t;
 //                jQuery("#inicioCampeonato").datepicker();
 //                jQuery("#finCampeonato").datepicker();
 //                jQuery("#limiteHabilitacion").datepicker();
@@ -44,22 +45,20 @@
 //                        limiteHabilitacion : "required"
 //                    }
 //                });
-                var t;
+                var array = [];
+                <s:iterator value="equipoList">
+                        var obj = {
+                            value: <s:property value="idEquipo"/>,
+                            content: '<s:property value="nombreEquipo"/>'
+                    };
+                    array.push(obj);
+                </s:iterator>
 		jQuery(function() {
 			t = jQuery('#test').bootstrapTransfer(
 				{'target_id': 'multi-select-input',
 				 'height': '15em',
 				 'hilite_selection': true});
-			
-			t.populate([
-				{value:"1", content:"Universitario"},
-				{value:"2", content:"Busch Junior"},
-				{value:"3", content:"The Strongest"},
-				{value:"4", content:"Milan"},
-				{value:"5", content:"Amanecer"}
-			]);
-			t.set_values(["2", "4"]);
-			//console.log(t.get_values());
+                        t.populate(array);
 		});
 		jQuery(".test").click(function(){
 			console.log(t.get_values());
