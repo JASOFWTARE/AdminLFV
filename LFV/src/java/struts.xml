@@ -39,5 +39,9 @@
            <result name="cerrado" type="redirect">CampeonatoAction!listaCampeonatos</result>
        </action>
        
+       <action name="AsignarEquipos" class="com.lfv.controller.AsignarEquiposAction">
+           <result name="success">campeonato/asignarEquipos.jsp</result>
+       </action>
+       
     </package>
 </struts>
