@@ -27,7 +27,7 @@
             </div>
             </s:else>
             <div id="tabla" class="tabla">
-                <jsp:include page="tablaJugador.jsp"/>
+                <jsp:include page="tablaCampeonato.jsp"/>
             </div>
         </div>    
         </div>

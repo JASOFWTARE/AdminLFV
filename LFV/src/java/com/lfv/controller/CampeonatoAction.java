@@ -4,10 +4,12 @@
  */
 package com.lfv.controller;
 
+import com.lfv.BL.CampeonatoManager;
 import com.lfv.constants.Constantes;
 import com.lfv.entitys.Campeonato;
 import com.lfv.util.ManagedUtil;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,23 +27,43 @@ public class CampeonatoAction extends ManagedUtil{
     private boolean campeonatoAbierto;
     
     public String execute(){
-        setAccion(Constantes.GUARDAR);
-        if (getIdCampeonato() > 0) {
-            setAccion(Constantes.ACTUALIZAR);
+        accion = Constantes.GUARDAR;
+        if (idCampeonato > 0) {
+            accion = Constantes.ACTUALIZAR;
+            campeonato = campeonatoManager.getCampeonatoById(idCampeonato);
         }
         return SUCCESS;
     }
     
     public String actualizarCampeonato() {
+        if (accion.equals(Constantes.ACTUALIZAR)) {
+            Campeonato campeonatoAnt = campeonatoManager.getCampeonatoById(idCampeonato);
+            campeonatoAnt.setNombreCampeonato(campeonato.getNombreCampeonato());
+            campeonatoAnt.setGestionCampeonato(campeonato.getGestionCampeonato());
+            campeonatoAnt.setInicioCampeonato(new Date(inicioCampeonato));
+            campeonatoAnt.setFinCampeonato(new Date(finCampeonato));
+            campeonatoAnt.setLimiteHabilitacionCampeonato(new Date(limiteHabilitacion));
+            campeonatoManager.ActualizarCampeonato(campeonatoAnt);
+        } else {
+            campeonato.setInicioCampeonato(new Date(inicioCampeonato));
+            campeonato.setFinCampeonato(new Date(finCampeonato));
+            campeonato.setLimiteHabilitacionCampeonato(new Date(limiteHabilitacion));
+            campeonato.setEstadoCampeonato(true);
+            campeonatoManager.GuardarCampeonato(campeonato);
+        }
         return "actualizado";
     }
     
     public String listaCampeonatos() {
-        campeonatoAbierto = false;
+        campeonatoList = campeonatoManager.getAllCampeonato();
+        campeonatoAbierto = campeonatoManager.IsExistCampeonatoAperturado();
         return "lista";
     }
     
     public String cerrarCampeonato() {
+        campeonato = campeonatoManager.getCampeonatoById(idCampeonato);
+        campeonato.setEstadoCampeonato(false);
+        campeonatoManager.ActualizarCampeonato(campeonato);
         return "cerrado";
     }
 

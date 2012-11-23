@@ -22,8 +22,12 @@
         </s:else>
     </div>
     <div class="cabezeraAcciones">
-        <a href='CampeonatoAction?idCampeonato=<s:property value="idCampeonato"/>'><img src="resources/images/edit.png"></a>
-        <a href='CampeonatoAction!cerrarCampeonato?idCampeonato=<s:property value="idCampeonato"/>'><img src="resources/images/delete.png"></a>
+        <s:if test="estadoCampeonato">
+            <a href='CampeonatoAction?idCampeonato=<s:property value="idCampeonato"/>'><img title="Modificar Campeonato" src="resources/images/edit.png"></a>
+            <a href='AsignarEquipos?idCampeonato=<s:property value="idCampeonato"/>'><img title="Asignar Equipos" src="resources/images/more.jpg"></a>
+            <a href='AsignarJugadores?idCampeonato=<s:property value="idCampeonato"/>'><img title="Asignar Jugadores" src="resources/images/groups-icon.png"></a>
+            <a href='CampeonatoAction!cerrarCampeonato?idCampeonato=<s:property value="idCampeonato"/>'><img title="Cerrar Campeonato" src="resources/images/delete.png"></a>
+        </s:if>
     </div>
     </div>
 </s:iterator>

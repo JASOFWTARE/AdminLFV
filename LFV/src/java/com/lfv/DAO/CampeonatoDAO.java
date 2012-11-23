@@ -61,7 +61,6 @@ public class CampeonatoDAO extends GenericDAO<Campeonato> {
             String jpql = "select c from Campeonato c Where c.estadoCampeonato=true";
             Query query = em.createQuery(jpql);
             campeonatoList = (List<Campeonato>) query.getResultList();
-            System.out.println(">>" + campeonatoList.size());
             if (campeonatoList.size()!=0) 
                 result = true;
             else
