@@ -41,7 +41,7 @@ public class JugadorAsignado implements Serializable {
     @Basic(optional = false)
     @Column(name = "id_jugador_asignado")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "seq_jugador_asignado")
-    @SequenceGenerator(name="seq_jugador_asignado", sequenceName = "seq_jugador_asignado")
+    @SequenceGenerator(name="seq_jugador_asignado", sequenceName = "seq_jugador_asignado", allocationSize=1)
     private Long idJugadorAsignado;
     @Column(name = "fecha_asignacion")
     @Temporal(TemporalType.DATE)
