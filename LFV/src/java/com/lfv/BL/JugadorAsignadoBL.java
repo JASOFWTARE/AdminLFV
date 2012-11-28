@@ -39,5 +39,18 @@ public class JugadorAsignadoBL implements  JugadorAsignadoManager{
     public List<JugadorAsignado> getByEquipoId(int idEquipo) {
         return asignadoDAO.getByEquipoId(idEquipo, em);
     }
+
+    @Override
+    public boolean guardartMultiJugadorAsignado(List<JugadorAsignado> asignados) {
+        boolean result = true;
+        try {
+            for (JugadorAsignado jugadorAsignado : asignados) {
+                asignadoDAO.create(jugadorAsignado, em);
+            }
+        } catch (Exception e) {
+            result = false;
+        }
+        return result;
+    }
     
 }

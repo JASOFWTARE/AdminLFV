@@ -13,4 +13,5 @@ public interface JugadorAsignadoManager {
     public void actualizarJugadorAsignado(JugadorAsignado jugadorAsignado);
     public void eliminarJugadorAsignado(JugadorAsignado jugadorAsignado);
     public List<JugadorAsignado> getByEquipoId(int idEquipo);
+    public boolean  guardartMultiJugadorAsignado(List<JugadorAsignado> asignados);
 }
